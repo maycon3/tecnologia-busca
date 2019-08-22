@@ -1,0 +1,23 @@
+
+<div class="centralizacao">
+  <div class="box">
+        <h1 class="centralizar-texto">Busca</h1>
+        <form [formGroup]="perguntaForm" >
+            <div class="input-group mb-3">
+                    <input
+                    formControlName="pergunta"
+                     type="text"
+                      class="form-control"
+                      aria-label="Recipient's username"
+                      aria-describedby="button-addon2"
+                    >
+                    <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="pegaPergunta()">Pesquisar</button>
+                    </div>
+            </div>
+        </form>
+    </div>   
+</div>
+
+
+<router-outlet></router-outlet>

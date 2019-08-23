@@ -9,6 +9,7 @@ import { FormBuilder  } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
 perguntaForm: any;
+pergunta:string;
 
   constructor(private formBuilder:FormBuilder) { }
 
@@ -24,7 +25,7 @@ perguntaForm: any;
 
   pegaPergunta(){
     let perguntaFeita = this.perguntaForm.value;
-    console.log(perguntaFeita.pergunta);
+    this.pergunta = perguntaFeita.pergunta;
   }
 
 }

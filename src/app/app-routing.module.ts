@@ -4,10 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { BuscaComponent } from './busca/busca.component';
 
 
-const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path: 'buscaDocumento', component:BuscaComponent}
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,9 +1,8 @@
-
-<div class="centralizacao">
-  <div class="box">
-        <h1 class="centralizar-texto">Busca</h1>
+<div class="componente mb-5">
+    <div class="teste">
+        <h1 class="ml-3 mb-3">Tecnologia de Busca</h1>
         <form [formGroup]="perguntaForm" >
-            <div class="input-group mb-3">
+            <div class="input-group col-sm-15 mb-3">
                     <input
                     formControlName="pergunta"
                      type="text"
@@ -12,12 +11,12 @@
                       aria-describedby="button-addon2"
                     >
                     <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="pegaPergunta()">Pesquisar</button>
+                    <button class="btn btn-primary" type="button" id="button-addon2" (click)="pegaPergunta()">Pesquisar</button>
                     </div>
             </div>
         </form>
-    </div>   
+     </div>
 </div>
-
-
-<router-outlet></router-outlet>
+  <div *ngIf="pergunta">
+    <app-busca [pergunta]="pergunta"></app-busca>
+  </div>

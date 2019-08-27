@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+const API = '127.0.0.1:5000';
+
 @Injectable()
 export class BuscaService{
 
@@ -19,8 +21,12 @@ export class BuscaService{
 
     constructor(private http:HttpClient){}
 
+    fazerpergunta(pergunta:string){
+        return this.http.post<any>(`${API}/pesquisa`, {pergunta});
+    }
 
     getLista(){
         return this.listaPergunta;
     }
+
 }

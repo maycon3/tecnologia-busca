@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { BuscaComponent } from './busca/busca.component';
 import { BuscaService } from './busca/busca.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,

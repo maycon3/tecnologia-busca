@@ -1,22 +1,27 @@
-<div class="componente mb-5">
-    <div class="teste">
-        <h1 class="ml-3 mb-3">Tecnologia de Busca</h1>
-        <form [formGroup]="perguntaForm" >
-            <div class="input-group col-sm-15 mb-3">
-                    <input
-                    formControlName="pergunta"
-                     type="text"
-                      class="form-control"
-                      aria-label="Recipient's username"
-                      aria-describedby="button-addon2"
-                    >
-                    <div class="input-group-append">
-                    <button class="btn btn-primary" type="button" id="button-addon2" (click)="pegaPergunta()">Pesquisar</button>
-                    </div>
-            </div>
-        </form>
-     </div>
-</div>
+<section class="cor-fundo">  
+    <h1 class="centraliza-titulo">Tecnologia de Busca</h1>  
+   <!--div class="componente" -->    
+    <form [formGroup]="perguntaForm" >
+              <div class="input-group col-sm-4 mb-3">
+                      <input
+                      formControlName="pergunta"
+                      type="text"
+                        class="form-control"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                      >
+                      <div class="input-group-append">
+                      <button class="btn btn-primary" type="button" id="button-addon2" (click)="pegaPergunta()">Pesquisar</button>
+                      </div>
+              </div>
+          </form>  
+  <!--/!--div -->
+</section>
+<section class="mt-4">
+  <p class="text-center text-muted texto-responsta" *ngIf="!pergunta">
+    Desculpe, nenhuma resposta encontrada! 
+  </p>
+</section>
   <div *ngIf="pergunta">
-    <app-busca [pergunta]="pergunta"></app-busca>
+    <app-busca [listaDePerguntas]="listaDePerguntas" [rows]="rows"></app-busca>
   </div>

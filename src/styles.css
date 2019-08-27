@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.componente {
-    width: 100vw;
-    height: 15vh;
-    background: #3CB371;
+.cor-fundo form {  
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,4 +13,18 @@
 
 .btn{
     border-radius: 26px;
+}
+
+.centraliza-titulo{
+    text-align: center;   
+}
+
+.cor-fundo{
+    width: 100vw;
+    height: 15vh;
+    background: #3CB371;
+}
+
+.texto-responsta{
+   font-size: 1.50em;
 }

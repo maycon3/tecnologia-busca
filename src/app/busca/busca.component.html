@@ -1,23 +1,23 @@
 <div class="container-fluid mt-4">
-    <h1 class="text-center mb-5">Lista de Resultados</h1>
+    <h1 class="text-center mb-5 ">Lista de Resultados</h1>
     <ol class="list-unstyled">
-            <li *ngFor="let cols of rows" class="row">
-                <div *ngFor="let lista of cols" class="col-4">
-                    <div class="card mb-3" >
-                        <div class="card-header">
-                            <h5>{{ lista.subTitulo }}</h5>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <p class="card-text">{{lista.texto}}</p>
-                            <!-- /.card-text -->
-                        </div>
-                        <!-- /.card-body -->
+        <li *ngFor="let cols of rows" class="row">
+            <div *ngFor="let lista of cols" class="col-4">
+                <div class="card mb-3" >
+                    <div class="card-header">
+                        <h5>{{ lista.subTitulo }}</h5>
                     </div>
-                    <!-- /.card -->
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <p class="card-text">{{lista.texto}}</p>
+                        <!-- /.card-text -->
+                    </div>
+                    <!-- /.card-body -->
                 </div>
-            </li>
-        </ol>
+                <!-- /.card -->
+            </div>
+        </li>
+    </ol>
 </div>
 <!-- /.container-fluid -->
 

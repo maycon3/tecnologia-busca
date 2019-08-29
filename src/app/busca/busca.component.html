@@ -1,27 +1,29 @@
-<div class="container-fluid mt-4">
-    <h1 class="text-center mb-5 ">Lista de Resultados</h1>
+<section class="container mt-4 mb-5" *ngIf="listas.length, else pesquisa">
+    <h1 class="ml-3 mb-5 ">Lista de Resultados</h1>
     <ol class="list-unstyled">
-        <li *ngFor="let cols of rows" class="row">
-            <div *ngFor="let lista of cols" class="col-4">
-                <div class="card mb-3" >
-                    <div class="card-header">
-                        <h5>{{ lista.subTitulo }}</h5>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <p class="card-text">{{lista.texto}}</p>
-                        <!-- /.card-text -->
-                    </div>
-                    <!-- /.card-body -->
+        <div *ngFor="let lista of listas">
+            <div class="card mb-4" >
+                <div class="card-header">
+                    <h5>{{ lista.Pergunta }}</h5>
                 </div>
-                <!-- /.card -->
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <p class="card-text">{{lista.Resposta}}</p>
+                    <!-- /.card-text -->
+                </div>
+                <!-- /.card-body -->
             </div>
-        </li>
+            <!-- /.card -->
+        </div>
     </ol>
-</div>
+</section>
 <!-- /.container-fluid -->
 
-
+<ng-template #pesquisa>   
+        <p class="text-center text-muted texto-responsta mt-5">
+            Desculpe, nenhuma resposta encontrada! 
+          </p>
+ </ng-template>
 
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BuscaService } from './busca.service';
 
 
 @Component({
@@ -8,16 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BuscaComponent implements OnInit {
 
-  @Input() listaDePerguntas: any [] = [];
-  @Input() rows: any [] = [];
+  @Input() listas:any[];
   
-
   constructor() { }
 
-  ngOnInit() {
-    //this.listaDePerguntas = this.buscaService.getLista();
-    //this.rows = this.groupColumns(this.listaDePerguntas);
-  }
+  ngOnInit() {}
 
 
   

@@ -11,8 +11,7 @@ export class HomeComponent implements OnInit {
 
 perguntaForm: any;
 pergunta:string;
-rows:any [] = [];
-listaDePerguntas: any[] = [];
+listas: any[] = [];
 
   constructor(
     private formBuilder:FormBuilder,
@@ -21,8 +20,6 @@ listaDePerguntas: any[] = [];
 
   ngOnInit() {
     this.createForms();
-    this.listaDePerguntas = this.buscaService.getLista();
-    this.rows = this.groupColumns(this.listaDePerguntas);
   }
 
   createForms(){
@@ -31,25 +28,20 @@ listaDePerguntas: any[] = [];
     });
   }
 
-  pegaPergunta(){
+ 
+
+  fazPergunta(){
     let perguntaFeita = this.perguntaForm.value;
     this.pergunta = perguntaFeita.pergunta;
+    console.log('pergunta do usuario :' + this.pergunta);
+    this.buscaService.fazerpergunta(this.pergunta)
+      .subscribe(resp=>{
+        this.listas = resp;
+        console.log(this.listas);
+      });
+
   }
 
-  //fazPergunta(){
-   // this.buscaService.fazerpergunta(this.pergunta).subscribe(resposta =>{
-     // this.listaDePerguntas = resposta;
-     // this.rows = this.groupColumns(this.listaDePerguntas);
-    //});
-  //}
-
-  groupColumns(lista:any) {
-    const newRows = [];
-
-    for(let index = 0; index < lista.length; index+=3) {
-        newRows.push(lista.slice(index, index + 3));
-    }
-    return newRows;
-  }
+  
 
 }

@@ -11,17 +11,22 @@
                         aria-describedby="button-addon2"
                       >
                       <div class="input-group-append">
-                      <button class="btn btn-primary" type="button" id="button-addon2" (click)="pegaPergunta()">Pesquisar</button>
+                      <button class="btn btn-primary" type="button" id="button-addon2" (click)="fazPergunta()">Pesquisar</button>
                       </div>
               </div>
           </form>  
   <!--/!--div -->
 </section>
-<section class="mt-4">
-  <p class="text-center text-muted texto-responsta" *ngIf="!pergunta">
-    Desculpe, nenhuma resposta encontrada! 
-  </p>
+<!-- section class="mt-4"  *ngIf="listaDePerguntas.length, else pesquisa">
+  <app-busca [listaDePerguntas]="listaDePerguntas"></app-busca>
+  
 </section>
-  <div *ngIf="pergunta">
-    <app-busca [listaDePerguntas]="listaDePerguntas" [rows]="rows"></app-busca>
-  </div>
+
+    <ng-template #pesquisa>   
+    <p class="text-center text-muted texto-responsta mt-5">
+        Desculpe, nenhuma resposta encontrada! 
+      </p>
+    </ng-template -->
+   
+<app-busca [listas]="listas"></app-busca>
+  

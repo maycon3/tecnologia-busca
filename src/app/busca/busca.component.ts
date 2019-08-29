@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BuscaService } from './busca.service';
-
+import { Perguntas } from '../home/perguntas';
 
 @Component({
   selector: 'app-busca',
@@ -9,12 +8,14 @@ import { BuscaService } from './busca.service';
 })
 export class BuscaComponent implements OnInit {
 
-  @Input() listas:any[];
+  @Input() listas:any[] = [];
+  
   
   constructor() { }
 
   ngOnInit() {}
 
+ 
 
   
 

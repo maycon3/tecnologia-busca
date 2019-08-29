@@ -1,14 +1,16 @@
 <section class="cor-fundo">  
-    <h1 class="centraliza-titulo">Tecnologia de Busca</h1>  
+    <h1 class="centraliza-titulo">Tecnologias de Busca</h1>  
    <!--div class="componente" -->    
     <form [formGroup]="perguntaForm" >
               <div class="input-group col-sm-4 mb-3">
                       <input
+                      #entrada
                       formControlName="pergunta"
                       type="text"
                         class="form-control"
                         aria-label="Recipient's username"
                         aria-describedby="button-addon2"
+                        (keyup.enter)="fazPerguntaEnter(entrada.value)"
                       >
                       <div class="input-group-append">
                       <button class="btn btn-primary" type="button" id="button-addon2" (click)="fazPergunta()">Pesquisar</button>
@@ -28,5 +30,5 @@
       </p>
     </ng-template -->
    
-<app-busca [listas]="listas"></app-busca>
-  
+   
+   <app-busca [listas]="listas"></app-busca>

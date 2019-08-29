@@ -1,4 +1,6 @@
-<section class="container mt-4 mb-5" *ngIf="listas.length, else pesquisa">
+
+
+<section class="container mt-4 mb-5" *ngIf="listas[0] !== ' ' && listas.length !== 0, else pesquisa">
     <h1 class="ml-3 mb-5 ">Lista de Resultados</h1>
     <ol class="list-unstyled">
         <div *ngFor="let lista of listas">
@@ -8,7 +10,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <p class="card-text">{{lista.Resposta}}</p>
+                    <p class="card-text">{{ lista.Resposta }}</p>
                     <!-- /.card-text -->
                 </div>
                 <!-- /.card-body -->
@@ -18,12 +20,11 @@
     </ol>
 </section>
 <!-- /.container-fluid -->
-
-<ng-template #pesquisa>   
-        <p class="text-center text-muted texto-responsta mt-5">
-            Desculpe, nenhuma resposta encontrada! 
+<ng-template  #pesquisa>
+        <p class="text-center text-muted texto-responsta mt-5"  *ngIf="listas[0] == ' '">
+            
           </p>
+          <p class="text-center text-muted texto-responsta mt-5"  *ngIf="listas.length == 0">
+                Desculpe, nenhuma resposta encontrada! 
+            </p>
  </ng-template>
-
-
-

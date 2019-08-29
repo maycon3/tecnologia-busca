@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder  } from '@angular/forms';
 import { BuscaService } from '../busca/busca.service';
 
+import { Perguntas } from './perguntas';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,7 +13,8 @@ export class HomeComponent implements OnInit {
 
 perguntaForm: any;
 pergunta:string;
-listas: any[] = [];
+listas: any[] = [' '];
+
 
   constructor(
     private formBuilder:FormBuilder,
@@ -33,15 +36,26 @@ listas: any[] = [];
   fazPergunta(){
     let perguntaFeita = this.perguntaForm.value;
     this.pergunta = perguntaFeita.pergunta;
-    console.log('pergunta do usuario :' + this.pergunta);
+    //console.log('pergunta do usuario :' + this.pergunta);
     this.buscaService.fazerpergunta(this.pergunta)
       .subscribe(resp=>{
         this.listas = resp;
-        console.log(this.listas);
+        //console.log(this.listas);
       });
-
   }
+
+  fazPerguntaEnter(pergunta:string){
+    this.buscaService.fazerpergunta(pergunta)
+      .subscribe(resp=>{
+        this.listas = resp        
+      });
+      
+  }
+
+  
+  
 
   
 
 }
+
